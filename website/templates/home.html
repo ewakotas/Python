@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Wallet{% endblock %} {% block content
+%}
+<form method="POST">
+  <h1 align="center"></h1>
+<div>
+  <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='style.css') }}"
+    />
+	<input type="radio" name="payment" id="card" value="card">
+	  <label for="card">
+		<i class="fa fa-credit-card" aria-hidden="true"></i>
+		<span>Card</span>
+	  </label>
+	<input type="radio" name="payment" id="cash" value="cash">
+	  <label for="cash">
+		<i class="fa fa-money" aria-hidden="true"></i>		
+		<span>Cash</span>
+	  </label>
+	<input type="submit" value="Submit">
+</div>
+</form>
+{% endblock %}

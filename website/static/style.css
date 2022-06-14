@@ -1,0 +1,48 @@
+html{
+	box-sizing: border-box;
+}
+*,*::before,*::after{
+	padding: 100;
+	margin: 100;
+	box-sizing: border-box;
+}body{
+    height: 100vh;
+    width: 100vw;
+	display: table;
+}
+
+input[type="radio"]{
+	-webkit-appearance:none;
+}
+label{
+	height: 400px;
+	width: 500px;
+	border:10px solid #3c99a0;
+	position: relative;
+	margin-top: 100px;
+	margin-left: 20px;
+	border-radius: 15px;
+	color: #3c4440;
+	transition: 0.5s;
+}
+.fa{
+	font-size: 200px;
+	position: absolute;
+	top:50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+label>span{
+	font-size: 25px;
+	position: absolute;
+	top:80%;
+	left: 50%;
+	transform: translate(-50%,80%);
+	font-family: "Poppins",sans-serif;
+	font-weight: 500;
+}
+input[type="radio"]:checked + label{
+	background-color: #a4d5cc;
+	color: rgb(255, 253, 253);
+	box-shadow: 0 15px 45px rgba(24,249,141,0.2);
+}

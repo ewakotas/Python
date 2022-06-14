@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Add spending{% endblock %} {% block content
+    %}
+    <form method="POST">
+       <h1 align="center">Add spending</h1>
+       <div class="form-group">
+         <label for="name">Name</label>
+         <input
+           type="name"
+           class="form-control"
+           id="name"
+           name="name"
+           placeholder="Enter name"
+         />
+       </div>
+       <div class="form-group">
+         <label for="amount">Cost</label>
+         <input
+           type="amount"
+           class="form-control"
+           id="amount"
+           name="amount"
+           placeholder="Enter cost"
+         />
+       </div>
+       <div  class="label">Currency:
+        <select class="form-group" name="currency">
+            <option disabled selected value="Currency">Currency</option>
+                {% for option in currency_names %}
+                    <option value={{option}}>{{option}}</option> 
+                {% endfor %}
+        </select>
+        </div>
+       <div class="label">Payment</div>
+           <link href="https://fonts.googleapis.com/css?family=Poppins:500&display=swap" rel="stylesheet">
+   
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   
+           
+       
+           <input type="radio" name="payment" id="card" value="card">
+           <label for="card">
+               <i class="fa fa-credit-card fa-4x" aria-hidden="true"></i>
+               
+           </label>
+           <input type="radio" name="payment" id="cash" value="cash">
+           <label for="cash">
+               <i class="fa fa-money fa-4x" aria-hidden="true"></i>		
+               
+           </label>
+       <br />
+       <button type="submit" class="btn btn-secondary">Add spending</button>
+     </form>
+     {% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}Bank account balance{% endblock %} {% block content
+    %}
+    <h1 align="center">Bank card balance</h1>
+    <ul class="list-group list-group-flush" id="money">
+        <style>
+        table, th, td {
+            border:1px solid black;
+          }
+        </style>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Currency</th>
+                <th>Date</th>
+                <th></th>
+              </tr>
+            {% for money in user.money if money.cash_or_bank == 'card'%}
+            <tr>
+                <td>{{money.name}}</td>
+                <td>{{money.cost}}</td>
+                <td>{{money.currency}}</td>
+                <td>{{money.date}}</td>
+                <td><button type="button" class="close" onClick="deleteMoney({{ money.id }})">
+                    <span aria-hidden="true">&times;</span>
+                  </button></td>
+                
+        
+            </tr>
+            
+            {% endfor %}
+        </table>
+      
+    </ul>
+    <div>
+        <b style = "color: rgb(0, 0, 0);font-size:30px;">Balance = {{saldo}} PLN</b>  
+        
+       
+    </div>
+    {% endblock %}
